@@ -9,15 +9,19 @@
 
 <body>
     <div id='canvas'>
-        <div id='grid'>
-            <div id='grid-tile-1'></div>
+        <div id='enemyBoard'>
         </div>
-        <div id='shipstorage'>
-            <div id='ship1' style="grid-column-start: 2; grid-column-start: 4;">
-                <div id='ship2'>
-                </div>
-            </div>
+
+        <div id='playerBoard'>
+        </div>
+
+        <div id='shipStorage'>
+            
+        </div>
+
+    </div>
 </body>
+
 <style>
     #canvas {
         background-color: black;
@@ -30,7 +34,7 @@
         background-color: blue;
     }
 
-    #gridd-tile-1 {
+    #grid-tile-1 {
         grid-column-start: 1;
         grid-row-start: 1;
     }
@@ -43,12 +47,13 @@
         background-color: green;
     }
 </style>
-<script src="jsfile.js"></script>
+<script src="script.js"></script>
 <script>
-    document.getElementById("gridd-tile-1").addEventListener('touchstart', onGridTileTouch);
+    document.getElementById("grid-tile-1").addEventListener('ontouchstart', onGridTileTouch);
 
     function onGridTileTouch(event) {
-        event.
+        //event.
+        console.log('test');
     }
 </script>
 
