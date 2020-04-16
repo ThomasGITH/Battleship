@@ -1,7 +1,7 @@
 let board = [20][20];
 
 let rows = 10;
-let colums = 15;
+let colums = 20;
 let tileWidth;
 let tileHeight;
 
@@ -11,8 +11,8 @@ const context = canvas.getContext('2d');
 context.canvas.width = window.innerWidth;
 context.canvas.height = window.innerHeight;
 
-tileWidth = (context.canvas.width * 0.75) / rows;
-tileHeight = (context.canvas.height * 0.75) / colums;
+tileWidth = (context.canvas.width * 0.80) / rows;
+tileHeight = (context.canvas.height * 0.80) / colums;
 
 class Grid {
 
@@ -22,7 +22,15 @@ class Grid {
     drawGrid() {
         for (let x = 0; x < rows; x++) {
             for (let y = 0; y < colums; y++) {
-                let t = new Tile(x, y);
+                let t = 0;
+                if(y >= 10)
+                {
+                    t = new Tile(x * tileWidth, (context.canvas.height * 0.050) + (y * tileHeight));
+                }
+                else
+                {
+                    t = new Tile(x * tileWidth, (context.canvas.height * 0.025) + (y * tileHeight));
+                }
                 console.log(t);
                 t.draw();
             }
@@ -45,7 +53,7 @@ class Tile {
 
         let beginPoint = (window.innerWidth /2) - (tileWidth * 5);
 
-        context.rect(beginPoint + (this.posX * tileWidth), this.posY * tileHeight, tileWidth, tileHeight);
+        context.rect(beginPoint + this.posX, this.posY, tileWidth, tileHeight);
         context.stroke();
     }
 }
