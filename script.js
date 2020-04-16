@@ -1,41 +1,57 @@
+let board = [20][20];
+
+let rows = 10;
+let colums = 15;
+let tileWidth;
+let tileHeight;
+
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
 context.canvas.width = window.innerWidth;
 context.canvas.height = window.innerHeight;
 
-let board = [20][20];
-let rows = 20;
-let colums = 20;
+tileWidth = (context.canvas.width * 0.75) / rows;
+tileHeight = (context.canvas.height * 0.75) / colums;
 
-let tileWidth = window.innerWidth / rows;
-let tileHeight = window.innerHeight / colums;
+class Grid {
 
-for(i = 0; i < rows; i++)
-{
-    board = [];
-    for(j = 0; i < colums; j++)
-    {
-        board[i][j] = new Tile(new Vector2(tileWidth * i, tileHeight * j));
+    constructor() {
+    }
+
+    drawGrid() {
+        for (let x = 0; x < rows; x++) {
+            for (let y = 0; y < colums; y++) {
+                let t = new Tile(x, y);
+                console.log(t);
+                t.draw();
+            }
+        }
+    }
+}
+
+class Tile {
+
+    posX;
+    posY;
+
+    constructor(x, y) {
+        this.posX = x;
+        this.posY = y;
+    }
+
+    draw() {
+        context.beginPath();
+
+        let beginPoint = (window.innerWidth /2) - (tileWidth * 5);
+
+        context.rect(beginPoint + (this.posX * tileWidth), this.posY * tileHeight, tileWidth, tileHeight);
+        context.stroke();
     }
 }
 
 
-console.log(tileHeight);
 
-class Tile
-{
-    constructor(position)
-    {
-        this.position = position;
-    }
-}
 
-class Vector2
-{
-    constructor(x,y)
-    {
-        this.x = x;
-        this.y = y;
-    }
-}
+g = new Grid;
+g.drawGrid();
