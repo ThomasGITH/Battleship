@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='canvas'>
+        <div id='grid'>
+            <div id='grid-tile-1'></div>
+        </div>
+        <div id='shipstorage'>
+            <div id='ship1' style="grid-column-start: 2; grid-column-start: 4;">
+                <div id='ship2'>
+                </div>
+            </div>
+</body>
+<style>
+    #canvas {
+        background-color: black;
+    }
+
+    #grid {
+        display: grid;
+        grid-template-columns: 4;
+        grid-template-rows: 4;
+        background-color: blue;
+    }
+
+    #gridd-tile-1 {
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+
+    #shipstorage {
+        display: grid;
+    }
+
+    #ship1 {
+        background-color: green;
+    }
+</style>
+<script src="jsfile.js"></script>
+<script>
+    document.getElementById("gridd-tile-1").addEventListener('touchstart', onGridTileTouch);
+
+    function onGridTileTouch(event) {
+        event.
+    }
+</script>
+
+</html>
