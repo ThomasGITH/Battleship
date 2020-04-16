@@ -4,57 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Routerstroke 3000</title>
 </head>
 
 <body>
-    <div id='canvas'>
-        <div id='enemyBoard'>
-        </div>
-
-        <div id='playerBoard'>
-        </div>
-
-        <div id='shipStorage'>
-            
-        </div>
-
-    </div>
+    <canvas id="canvas" width="1080" height="1920"></canvas>
 </body>
 
 <style>
     #canvas {
-        background-color: black;
-    }
-
-    #grid {
-        display: grid;
-        grid-template-columns: 4;
-        grid-template-rows: 4;
         background-color: blue;
-    }
-
-    #grid-tile-1 {
-        grid-column-start: 1;
-        grid-row-start: 1;
-    }
-
-    #shipstorage {
-        display: grid;
-    }
-
-    #ship1 {
-        background-color: green;
     }
 </style>
 <script src="script.js"></script>
 <script>
-    document.getElementById("grid-tile-1").addEventListener('ontouchstart', onGridTileTouch);
+    /*document.getElementById("grid-tile-1").addEventListener('ontouchstart', onGridTileTouch);
 
     function onGridTileTouch(event) {
         //event.
         console.log('test');
-    }
+    }*/
 </script>
 
 </html>
